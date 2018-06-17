@@ -11,18 +11,32 @@ from apscheduler.triggers.interval import IntervalTrigger
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "eco-test"
 socketio = SocketIO(app)
-test = [1]
+
+sample_elevation = [20] * 10
+sample_speed = [80] * 10
 rnd = random.Random()
+
 
 @app.route("/")
 def index():
     return app.send_static_file('index.html')
 
+
 def update():
     print("Update sent")
-    test.append(rnd.randint(0, 8))
-    socketio.emit('updateElevation', test)
-    socketio.emit('updateSpeed', test)
+
+    sample_elevation.append(rnd.randint(20, 25))
+    if len(sample_elevation) > 10:
+        sample_elevation.pop(0)
+
+    sample_speed.append(rnd.randint(
+        sample_speed[-1] - 10, sample_speed[-1] + 10))
+    if len(sample_speed) > 10:
+        sample_speed.pop(0)
+
+    socketio.emit('updateElevation', sample_elevation)
+    socketio.emit('updateSpeed', sample_speed)
+
 
 if __name__ == "__main__":
     scheduler = BackgroundScheduler()
