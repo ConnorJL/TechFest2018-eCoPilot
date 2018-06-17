@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>eCopilot</title>
     <link rel="stylesheet" href="static/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700&amp;subset=greek-ext,latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
     <script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body>
@@ -33,10 +35,12 @@
             <div class="HeaderTripDataSubblock">
 
                 <div class="TripDataDate">
+                    17.06.2018
                     <!-- Hier bitte das AKTUELLE DATUM EINFUEGEN -->
                 </div>
 
                 <div class="TripDataTime">
+                    10:11:47
                     <!-- Hier bitte die AKTUELLE ZEIT EINFUEGEN -->
                 </div>
 
@@ -86,6 +90,7 @@
                 </div>
 
                 <div class="CurrentSpeedValue">
+                    62
                     <!-- CURRENT SPEED einfuegen -->
                 </div>
 
@@ -94,6 +99,7 @@
                 </div>
 
                 <div class="OptimalSpeedValue">
+                    71
                     <!-- RECOMMENDED SPEED einfuegen -->
                 </div>
 
@@ -104,13 +110,13 @@
             <div class="BreakingSubblock">
 
                 <div class="BreakingLabel">
-
+                    Breaking is best in
                     <!-- BREAKING LABEL einfuegen ("Breaking is best in" OR "Breaking required in") -->
 
                 </div>
 
                 <div class="BreakingValue">
-
+                    3280 meters
                     <!-- BREAKING DISTANCE einfuegen -->
 
                 </div>
@@ -146,11 +152,11 @@
                 </div>
 
                 <div class="ETAValue">
-                    <!-- ETA einfuegen -->
+                    17:11
                 </div>
 
                 <div class="ETADifference">
-                    <!-- ETA DIFFERENCE einfuegen -->
+                    +32
                 </div>
 
                 <div class="ETAPlus">
@@ -167,8 +173,12 @@
 
         <div class="ScoreBlock">
 
-            <div class="ScoreSubblock">
+            <canvas class="ScoreSubblock">
                 <!-- SCORE GRAPH einfuegen -->
+            </canvas>
+
+            <div class="ScoreNumber">
+                3200
             </div>
 
         </div>

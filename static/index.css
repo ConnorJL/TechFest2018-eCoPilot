@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 28pt;
+    color: white;
 }
 
 .body {
@@ -27,7 +30,7 @@
         ". TripBlock ETABlock ETABlock ."
         ". . . . .";
 
-    background-color: black;
+    background-color: rgb(51, 51, 51);
 }
 
 
@@ -50,13 +53,15 @@
             ". HeaderMenuLink . . HeaderLogo . HeaderTripDataSubblock ."
             ". . . . . . . .";
 
-    background-color: yellow;
+    background-color: rgb(102, 102, 102);
 }
 
 .HeaderUserLink{
     grid-area: HeaderUserLink;
     width: 100%;
     height: 100%;
+
+    cursor: pointer;
 
     background: url("Assets/HeaderUserLink.svg") no-repeat;
 }
@@ -66,8 +71,19 @@
     width: 100%;
     height: 100%;
 
+    cursor: pointer;
+
     background: url("Assets/HeaderMenuLink.svg") no-repeat;
 }
+
+.HeaderMenuLink:hover {
+    background: url("Assets/HeaderMenuLinkHover.svg") no-repeat;
+}
+
+.HeaderUserLink:hover {
+    background: url("Assets/HeaderUserLinkHover.svg") no-repeat;
+}
+
 
 .HeaderLogo {
     grid-area: HeaderLogo;
@@ -93,8 +109,6 @@
             "TripDataTime TripDataTime TripDataTime TripDataTime TripDataTime TripDataDate TripDataDate TripDataDate TripDataDate TripDataDate"
             ". . . . . . . . . ."
             "TripDataCity1Logo . TripDataCity1Label . TripDataCityArrow TripDataCityArrow . TripDataCity2Label . TripDataCity2Logo";
-
-    background-color: red;
 }
 
 .TripDataDate {
@@ -102,7 +116,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    text-align: right;
 }
 
 .TripDataTime {
@@ -110,7 +124,7 @@
      width: 100%;
      height: 100%;
 
-     background-color: green;
+    text-align: left;
  }
 
 .TripDataCity1Label {
@@ -118,7 +132,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    text-align: left;
 }
 
 .TripDataCity1Logo {
@@ -134,7 +148,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    text-align: right;
 }
 
 .TripDataCity2Logo {
@@ -177,7 +191,7 @@
             ". BreakingSubblock . . . ."
             ". . . . . .";
 
-    background-color: yellow;
+    background-color: rgb(102, 102, 102);
 }
 
 .Hoehengraph {
@@ -185,7 +199,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: red;
+    background-color: rgb(128, 128, 128);
 }
 
 
@@ -211,23 +225,19 @@
             "SpeedGraph . OptimalSpeedValue ."
             "SpeedGraph . . .";
 
-    background-color: red;
+    background-color: rgb(128, 128, 128);
 }
 
 .SpeedGraph {
     grid-area: SpeedGraph;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .CurrentSpeedLabel {
     grid-area: CurrentSpeedLabel;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .CurrentSpeedValue {
@@ -235,15 +245,15 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    margin-top: -10px;
+    font-size: 35pt;
+    text-align: center;
 }
 
 .OptimalSpeedLabel {
     grid-area: OptimalSpeedLabel;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .OptimalSpeedValue {
@@ -251,7 +261,9 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    margin-top: -10px;
+    font-size: 35pt;
+    text-align: center;
 }
 
 
@@ -273,7 +285,7 @@
             ". BreakingValue ."
             ". . .";
 
-    background-color: red;
+    background-color: rgb(128, 128, 128);
 }
 
 .BreakingLabel {
@@ -281,7 +293,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    text-align: center;
 }
 
 .BreakingValue{
@@ -289,7 +301,9 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    margin-top: -10px;
+    font-size: 35pt;
+    text-align: center;
 }
 
 
@@ -306,8 +320,6 @@
     grid-template-rows: 100%;
     grid-template-areas:
             "FeedbackTrack . FeedbackTrain . FeedbackSensor";
-
-    background-color: red;
 }
 
 .FeedbackTrack{
@@ -315,7 +327,9 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    cursor: pointer;
+
+    background: url("Assets/FeedbackTrack.svg") no-repeat;
 }
 
 .FeedbackTrain{
@@ -323,7 +337,9 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    cursor: pointer;
+
+    background: url("Assets/FeedbackTrain.svg") no-repeat;
 }
 
 .FeedbackSensor{
@@ -331,7 +347,21 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    cursor: pointer;
+
+    background: url("Assets/FeedbackSensor.svg") no-repeat;
+}
+
+.FeedbackSensor:hover {
+    background: url("Assets/FeedbackSensorHover.svg") no-repeat;
+}
+
+.FeedbackTrack:hover {
+    background: url("Assets/FeedbackTrackHover.svg") no-repeat;
+}
+
+.FeedbackTrain:hover {
+    background: url("Assets/FeedbackTrainHover.svg") no-repeat;
 }
 
 
@@ -349,17 +379,30 @@
     grid-template-areas:
             ". . ."
             ". ScoreSubblock ."
+            ". ScoreNumber ."
             ". . .";
 
-    background-color: yellow;
+    background-color: rgb(102, 102, 102);
 }
 
 .ScoreSubblock {
     grid-area: ScoreSubblock;
     width: 100%;
-    height: 100%;
+    height: 80%;
 
-    background-color: red;
+/*    background-color: rgb(128, 128, 128); */
+}
+
+.ScoreNumber {
+    grid-area: ScoreNumber;
+    width: 100%;
+    height: 20%;
+
+    margin-top: -100px;
+    font-size: 35pt;
+    text-align: center;
+
+/*    background-color: rgb(128, 128, 128); */
 }
 
 
@@ -380,7 +423,7 @@
             "ETASubblock ."
             ". .";
 
-    background-color: yellow;
+    background-color: rgb(102, 102, 102);
 }
 
 .ETASubblock {
@@ -398,31 +441,25 @@
             ". ETAPlus ETAPlus . ETAMinus ETAMinus ."
             ". . . . . . .";
 
-    background-color: red;
+    background-color: rgb(128, 128, 128);
 }
 
 .ETALabel {
     grid-area: ETALabel;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .ETAValue {
     grid-area: ETAValue;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .ETADifference {
     grid-area: ETADifference;
     width: 100%;
     height: 100%;
-
-    background-color: green;
 }
 
 .ETAPlus {
@@ -430,7 +467,13 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    cursor: pointer;
+
+    background: url("Assets/ETAPlus.svg") no-repeat;
+}
+
+.ETAPlus:Hover {
+    background: url("Assets/ETAPlusHover.svg") no-repeat;
 }
 
 .ETAMinus{
@@ -438,5 +481,12 @@
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    cursor: pointer;
+
+    background: url("Assets/ETAMinus.svg") no-repeat;
 }
+
+.ETAMinus:Hover {
+    background: url("Assets/ETAMinusHover.svg") no-repeat;
+}
+

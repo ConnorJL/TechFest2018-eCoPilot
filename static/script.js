@@ -17,6 +17,29 @@ var options = {
 };
 var elevationChart = new Chartist.Line('.Hoehengraph', data, options);
 var speedChart = new Chartist.Line('.SpeedGraph', data, options);
+var scoreChart = new Gauge($('.ScoreSubblock')[0]).setOptions({
+    angle: -0.2, // The span of the gauge arc
+    lineWidth: 0.2, // The line thickness
+    radiusScale: 1, // Relative radius
+    pointer: {
+        length: 0.6, // // Relative to gauge radius
+        strokeWidth: 0.035, // The thickness
+        color: 'white' // Fill color
+    },
+    limitMax: false,     // If false, max value increases automatically if value > maxValue
+    limitMin: false,     // If true, the min value of the gauge will be fixed
+    colorStart: 'red',   // Colors
+    colorStop: 'red',    // just experiment with them
+    strokeColor: 'green',  // to see which ones work best for you
+    generateGradient: true,
+    highDpiSupport: true,     // High resolution support
+
+});
+
+scoreChart.maxValue = 5000; // set max gauge value
+scoreChart.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+scoreChart.animationSpeed = 32; // set animation speed (32 is default value)
+scoreChart.set(3000); // set actual value
 
 
 var socket = io.connect('http://' + document.domain + ':' + location.port);
@@ -40,6 +63,11 @@ var updateSpeedChart = function (d) {
     speedChart.update(data);
 };
 socket.on('updateSpeed', updateSpeedChart);
+var updateScoreChart = function (d) {
+    scoreChart.set(d);
+    $(".ScoreNumber").html(d);
+};
+socket.on('updateScore', updateScoreChart);
 
 var updateClock = function () {
     var dt = new Date();
